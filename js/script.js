@@ -450,3 +450,231 @@
 // }
 // console.log(includes([1, 2, 3, 4, 5], 3));
 
+ 
+
+// ============== ОБЪЕКТЫ ============
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   rating: 8.38,
+// };
+// for (const key in book) {
+//   // Ключ
+//   console.log(key);
+//   // Значение свойства с таким ключом
+//   console.log(book[key]);
+// }
+
+// ----------- Дз -16
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getProductPrice(productName) {
+//   for (const product of products) {
+//     console.log(product);
+//     if (product.name === productName) {
+//       console.log(product.price);
+//       return product.price;
+//       }
+//     return null;
+//   }
+// }
+// console.log(getProductPrice("Radar"));
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getAllPropValues(propName) {
+//   const result = [];
+//   for (const product of products) {
+//     result.push(product[propName]);
+//   }
+//   return result;
+// }
+// console.log(getAllPropValues("price"));
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+// function calculateTotalPrice(productName) {
+//   for (const product of products) {
+//     if (product.name === productName) {
+//     return product.price * product.quantity;
+//     }
+//   }
+//   return 0;
+// }
+// console.log(calculateTotalPrice("Scanner"));
+
+// const a = [1, 2, 5, 8];
+// const b = ["e", "w", "k", "s"];
+// const c = a.concat(b);
+// const d = a + b; //Результат: 1,2,5,8e,w,k,s - строка
+// // const d = [...a, ...b];
+// console.log(c);
+// console.log(typeof(d));
+// a.push(-7);
+// console.log(c);
+
+// const user = {
+//   name: "Jacques Gluke",
+//   tag: "jgluke",
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+
+// const {
+//   name,
+//   tag,
+//   stats: { followers, views: userViews, likes: userLikes = 100 },
+// } = user;
+
+// console.log(name); // Jacques Gluke
+// console.log(tag); // jgluke
+// console.log(followers); // 5603
+// console.log(userViews); // 4827
+// console.log(userLikes); // 1308
+
+// ------------- ex.28
+// const firstGroupScores = [64, 42, 93];
+// const secondGroupScores = [89, 14, 51, 26];
+// const thirdGroupScores = [29, 47, 18, 97, 81];
+// const allScores = [...firstGroupScores, ...secondGroupScores, ...thirdGroupScores];
+// const bestScore = Math.max(...allScores);
+// const worstScore = Math.min(...allScores);
+
+// ------------- ex.29
+// const defaultSettings = {
+//   theme: "light",
+//   public: true,
+//   withPassword: false,
+//   minNumberOfQuestions: 10,
+//   timePerQuestion: 60,
+// };
+// const overrideSettings = {
+//   public: false,
+//   withPassword: true,
+//   timePerQuestion: 30,
+// };
+// // Change code below this line
+// const finalSettings = {...defaultSettings, ...overrideSettings};
+
+// ----------------- ex.30
+// function makeTask(data) {
+//   const completed = false;
+//   const category = "General";
+//   const priority = "Normal";
+ 
+//    return {
+//     completed,
+//     category,
+//     priority,
+//     ...data};
+
+// }
+// console.log(makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" }));
+
+// --------------- ex.33
+// function findMatches(arr, ...number) {
+//   const matches = [];
+//   for (i = 0; i < number.length; i += 1) {
+//     if (arr.includes(number[i])) {
+//       matches.push(number[i]);
+//     }
+//   }
+//   return matches;
+// }
+// console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+
+// -------------- ex.34
+// const bookShelf = {
+//   books: ["The last kingdom", "The guardian of dreams"],
+//   getBooks() {
+//     return "Returning all books";
+//   },
+//   addBook(bookName) {
+//     return `Adding book ${bookName}`;
+//   },
+//   removeBook(bookName) {
+//     return `Deleting book ${bookName}`
+//   },
+//   updateBook(oldName, newName) {
+//     return `Updating book ${oldName} to ${newName`
+//   }
+//   // Change code above this line
+// };
+// console.log(bookShelf.removeBook("Red sunset"));
+
+// ------------------ ex.35
+// const bookShelf = {
+//   books: ["The last kingdom", "Haze", "The guardian of dreams"],
+//   updateBook(oldName, newName) {
+//     this.books.splice([this.books.indexOf(oldName)], 1, newName);
+//   },
+// };
+// bookShelf.updateBook("Haze", "Dungeon chronicles");
+// console.log(bookShelf.books);
+
+//------------------- ex.41 ----- СТАРАЯ ЧЕРЕПАХА -----
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Dragon breath", price: 780 },
+    { name: "Stone skin", price: 520 },
+  ],
+
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(newPotion) {
+    for (const { name, price } of this.potions) {
+      if (name === newPotion.name) {
+        return `Error! Potion ${newPotion.name} is already in your inventory!`;
+      }
+    }
+    this.potions.push(newPotion);
+    
+  },
+  removePotion(potionName) {
+    for (i = 0; i < this.potions.length; i += 1) {
+      if (this.potions[i].name === potionName) {
+        this.potions.splice(i, 1);
+        return;
+      };
+    }
+    return `Potion ${potionName} is not in inventory!`;
+  },
+  updatePotionName(oldName, newName) {
+    for (i = 0; i < this.potions.length; i += 1) {
+      if (this.potions[i].name === oldName) {
+        this.potions[i].name = newName;
+        return;
+      }
+    }
+    return `Potion ${oldName} is not in inventory!`;
+  },
+};
+console.log("====== НАЧАЛЬНЫЕ ДАННЫЕ ==========")
+console.table(atTheOldToad.getPotions());
+console.log("");
+console.log("====== Конечные ДАННЫЕ ==========")
+// atTheOldToad.addPotion({ name: "Stone skin", price: 240 }); // 1 - test
+// atTheOldToad.removePotion("Dragon breath"); //                 2 - test
+// atTheOldToad.updatePotionName("Dragon breath", "Polymorth"); // 3 - test
+console.table(atTheOldToad.getPotions()); 
