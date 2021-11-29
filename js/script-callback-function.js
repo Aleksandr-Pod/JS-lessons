@@ -121,12 +121,14 @@
 //   }
 // console.log(calculateTotalPrice([12, 85, 37, 4]));
 
+// =========== Модуль 4 - задача 13
 // const changeEven = (numbers, value) => {
 //   const newNumbers = [];
 //   numbers.forEach(number => number % 2 === 0 ? newNumbers.push(number + value) : newNumbers.push(number))
 //   return newNumbers                
 // }
 // console.log(changeEven([1, 2, 3, 4, 5], 10));
+
 
 // const students = [
 //   { name: "Манго", courses: ["математика", "физика"] },

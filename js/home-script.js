@@ -33,64 +33,64 @@
 
 
 // ============ КАЗИНО ===========
-function checkNumber (number) {
-    if (number === 0) {
-        return "Stop";
-    } else if (number < 1 && number > 36) {
-        return "error-outOfRange";
-    }
-    return `Ваша ставка на число ${number}`;
-}
-function checkBet(bet = 0) {
-    if (userMoney < bet) {
-        return `Ваша ставка ${bet} превышает ваши деньги ${userMoney}`
-    }
-    return `Ваша сумма ставки: ${bet}`
-}
-function sleep(milliseconds) { // Пауза в милисекундах
-  const date = Date.now();
-  let currentDate = null;
-  do {
-    currentDate = Date.now();
-  } while (currentDate - date < milliseconds);
-}
+// function checkNumber (number) {
+//     if (number === 0) {
+//         return "Stop";
+//     } else if (number < 1 && number > 36) {
+//         return "error-outOfRange";
+//     }
+//     return `Ваша ставка на число ${number}`;
+// }
+// function checkBet(bet = 0) {
+//     if (userMoney < bet) {
+//         return `Ваша ставка ${bet} превышает ваши деньги ${userMoney}`
+//     }
+//     return `Ваша сумма ставки: ${bet}`
+// }
+// function sleep(milliseconds) { // Пауза в милисекундах
+//   const date = Date.now();
+//   let currentDate = null;
+//   do {
+//     currentDate = Date.now();
+//   } while (currentDate - date < milliseconds);
+// }
 
 
-let win = 0;
-let randomNumber = 0;
-let number = 0;
-let userMoney = 1000;
-console.log(`У вас есть ${userMoney} денег`);
-    for (let i = 1; i > 0; i -= 1) {
-        number = parseInt(prompt("Введите число, на которое ставите (1 - 2): (0 - выход из игры)"));
-        console.log(number);
-        if (number === 0 || number === null) {
-            break;
-        }
-        console.log(checkNumber(number));
-        let bet = parseInt(prompt("Введите сумму ставки:"));
-        console.log(checkBet(bet));
-        sleep(2000);
-        console.log("Вращаем барабан");
-        sleep(2000);
+// let win = 0;
+// let randomNumber = 0;
+// let number = 0;
+// let userMoney = 1000;
+// console.log(`У вас есть ${userMoney} денег`);
+//     for (let i = 1; i > 0; i -= 1) {
+//         number = parseInt(prompt("Введите число, на которое ставите (1 - 2): (0 - выход из игры)"));
+//         console.log(number);
+//         if (number === 0 || number === null) {
+//             break;
+//         }
+//         console.log(checkNumber(number));
+//         let bet = parseInt(prompt("Введите сумму ставки:"));
+//         console.log(checkBet(bet));
+//         sleep(2000);
+//         console.log("Вращаем барабан");
+//         sleep(2000);
 
-        randomNumber = Math.floor(Math.random() * 2 + 1);
-        console.log(`Выпадает число: ${randomNumber}`);
-        sleep(2000);
-        if (number === randomNumber) {
-            win = bet;
-            console.log(`Поздравляю вас, вы выиграли ${win} денег !!!`);
-            userMoney += win;
-            console.log(`Теперь у Вас ${userMoney} денег !`)
-        } else {
-            console.log("Вы проиграли, попробуйте ещё.")
-            userMoney -= bet;
-            console.log(`У Вас осталось ${userMoney} денег`);
-        }
-        i += 1;
-    }
-console.log("ИГРА ЗАКОНЧЕНА");
-sleep(2000);
+//         randomNumber = Math.floor(Math.random() * 2 + 1);
+//         console.log(`Выпадает число: ${randomNumber}`);
+//         sleep(2000);
+//         if (number === randomNumber) {
+//             win = bet;
+//             console.log(`Поздравляю вас, вы выиграли ${win} денег !!!`);
+//             userMoney += win;
+//             console.log(`Теперь у Вас ${userMoney} денег !`)
+//         } else {
+//             console.log("Вы проиграли, попробуйте ещё.")
+//             userMoney -= bet;
+//             console.log(`У Вас осталось ${userMoney} денег`);
+//         }
+//         i += 1;
+//     }
+// console.log("ИГРА ЗАКОНЧЕНА");
+// sleep(2000);
 
 
 
@@ -98,3 +98,59 @@ sleep(2000);
 //     const randomNumber = Math.floor(Math.random() * 2 + 1);
 //     console.log(randomNumber);
 // }
+
+
+//                 * * *
+// Сколько и каких букв в строке:
+
+// const getLettersCount = (str) => {
+//     const result = str.split('').reduce((acc, letter) => {
+//         return {
+//             ...acc,
+//             [letter]: acc[letter] ? acc[letter] + 1 : 1,
+//         };
+//     }, {});
+//     return result;
+// }
+// console.log(getLettersCount("abracadabra")); // { a: 5, b: 2, ..}
+
+
+//                * * *
+// разница "var" & "let"
+// ----------------------------------
+for (var i = 1; i < 5; i += 1) {
+    setTimeout(() => {
+        console.log(i);
+    }, 100)
+} // 5, 5, 5, 5
+// Потомучто "var" выходит над циклом, цикл бысто проходит
+// и в консоль выводится уже конечное значение i
+
+//-----------------------------------
+for (let i = 1; i < 5; i += 1) {
+    setTimeout(() => {
+        console.log(i);
+    }, 100)
+} // 1, 2, 3, 4
+// "let" работает только внутри цикла
+
+// ---------------------------------
+// Пример использования замыкания: (c "var")
+for (var i = 1; i < 5; i += 1) {
+    function fn(x) {
+        setTimeout(() => {
+            console.log(x);
+        }, 100)
+    }
+    fn(i);
+} // 1, 2, 3, 4
+
+// ---------------------------------
+// -------- IIFE --- функция вызываемая сразу
+for (var i = 1; i < 5; i += 1) {
+    (function fn(x) {
+        setTimeout(() => {
+            console.log(x);
+        }, 100)
+    })(i)
+} // 1, 2, 3, 4
