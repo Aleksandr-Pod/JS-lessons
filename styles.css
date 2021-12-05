@@ -42,7 +42,7 @@ body {
 } */
 
 /*              Example - 4   insertAdjacentHTML */
-body {
+/* body {
   padding: 16px;
 }
 
@@ -79,11 +79,13 @@ body {
 
 .list-item:not(:last-child) {
   margin-bottom: 8px;
-}
+} */
 
 /*           Example - 6      Transactions table      */
-.transaction-table td,
+/* .transaction-table td,
 .transaction-table th {
   padding: 8px;
   border: 1px solid black;
-}
+} */
+
+/*            Example        События полей ввода  */

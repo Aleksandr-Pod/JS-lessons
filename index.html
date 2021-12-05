@@ -51,8 +51,8 @@
       </thead>
     </table> -->
 
-    <!-- Example - 7       Forms -->
-    <form class="js-register-form" autocomplete="off">
+    <!-- Example - 7       Собрать данные с полей ввода -->
+    <!-- <form class="js-register-form" autocomplete="off">
       <label>
         Почта
         <input type="email" name="email" />
@@ -63,6 +63,27 @@
       </label>
       <br /><br />
       <button type="submit">Зарегистрироваться</button>
+    </form> -->
+
+    <!-- Example - 8        События полей ввода -->
+    <form class="js-register-form" autocomplete="off">
+      <label>
+        Почта
+        <input type="email" name="email" />
+      </label>
+      <label>
+        Пароль
+        <input type="password" name="password" />
+      </label>
+      <br /><br />
+      <label>
+        <input type="checkbox" class="js-checkLicense"></input>
+        Согласны с лицензионным соглашением </label
+      ><br /><br />
+
+      <button type="submit" class="js-formSubmit" disabled>
+        Зарегистрироваться
+      </button>
     </form>
 
     <!-- <script src="./js/script.js" type="module"></script> -->
