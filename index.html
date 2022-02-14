@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- <link rel="stylesheet" href="./styles.css" /> -->
+    <link rel="stylesheet" href="./styles-transformers.css" />
   </head>
   <body>
     <!-- Example - 1
@@ -99,6 +100,27 @@
     ></ul> -->
     <!-- 
     <div class="images"></div> -->
+
+    <!-- ИГРА Боты Трансформеры -->
+    <div class="section">
+      <h5>Выберите тип Трансформера</h5>
+      <button type="checkbox" class="autobot">AutoBot</button>
+      <button type="checkbox" class="desepticon">Desepticon</button>
+      <br><br>
+      <form class="makeBot">
+        <input type="text" placeholder="Имя бота"></input>
+        <br /><br />
+        <button type="submit">Создать Трансформера</button>
+      </form>
+    </div>
+    <div class="botParams hide">
+      <h3>Ваш бот:<span class="botType"></span>.Его зовут:<span class="botName"></span></h3>
+      <ul>
+        <li>Жизни (HP):<span class="botHP data"></span></li>
+        <li>Уровень Атаки:<span class="botAttack data"></span></li>
+        <li>Уровень Защиты:<span class="botDefence data"></span></li>
+      </ul>
+    </div>
 
     <!-- <script src="./js/script.js" type="module"></script> -->
     <!-- <script src="./js/home-script.js" type="module"></script> -->
